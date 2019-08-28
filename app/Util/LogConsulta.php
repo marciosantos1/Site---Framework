@@ -1,6 +1,12 @@
 <?php
 
 namespace App\Util;
+{
+    function __construct() {
+
+
+    }
+};
 class LogConsulta{
     
     private $caminho;
@@ -21,13 +27,13 @@ class LogConsulta{
         
         if(file_exists($this->caminho.'/log_geral.txt')){
             $dadosAtuais = $this->capturar();
-            $dadosAtuais .= "\n\n".$data;
+            $dadosAtuais .= "\n\n".$data. "  ".$this->obterIp();
             $this->gravarArquivos($dadosAtuais);
         } else {
-            $this->gravarArquivos($data);
+            $this->gravarArquivos($dadosAtuais);
         
         }
-        return $data; 
+        return $dadosAtuais; 
                
     }
     
@@ -44,18 +50,8 @@ class LogConsulta{
     }
     public function obterIp(){
         
-
-    $pegar_ip = $_SERVER["REMOTE_ADDR"];
-    $ip_permitido = "ip_permitido";
-
-    if ($pegar_ip == $ip_permitido) 
-    {
-       echo 'Ip Permitido!';
-    } 
-    else 
-    { 
-        header("Location: url");
-    }
+    $clienteIp = \Request::getClientIp(true);
+       return $clienteIp;
   
     }
     

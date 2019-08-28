@@ -43,5 +43,7 @@ class VerData extends Command
       $log = new LogConsulta($caminho);
       $data = $log->registrar();
       $this->info($data);
+ 
+     
     }
 }
