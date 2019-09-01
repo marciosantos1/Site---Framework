@@ -39,10 +39,11 @@ class VerData extends Command
      */
     public function handle()
     {
-      $caminho = 'storage/app';  
+      $caminho = 'C:\Users\mfdsc\Documents\NetBeansProjects11\Site---Framework\storage\app';  
       $log = new LogConsulta($caminho);
       $data = $log->registrar();
       $this->info($data);
+     
  
      
     }

@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Util;
+
 {
     function __construct() {
 
-
-    }
-};
+}
+}
 class LogConsulta{
     
     private $caminho;
@@ -27,22 +27,21 @@ class LogConsulta{
         
         if(file_exists($this->caminho.'/log_geral.txt')){
             $dadosAtuais = $this->capturar();
-            $dadosAtuais .= "\n\n".$data. "  ".$this->obterIp();
+            $dadosAtuais .= "\n\n"."DATA E HORA = ".$data;
+             $dadosAtuais .= " __ "."IP = ".$this->obterIp();
             $this->gravarArquivos($dadosAtuais);
         } else {
-            $this->gravarArquivos($dadosAtuais);
-        
+            $this->gravarArquivos($data);
+            
         }
         return $dadosAtuais; 
-               
-    }
+       }
     
     public function gravarArquivos($data){
         
-    file_put_contents($this->caminho.'/log_geral.txt', $data);  
+    file_put_contents($this->caminho.'/log_geral.txt',$data);  
   
     }
-    
     public function capturar(){
         
     $dados = file_get_contents($this->caminho.'/log_geral.txt');  

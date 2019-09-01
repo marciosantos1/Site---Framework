@@ -35,6 +35,7 @@
   </head>
   <body>
     <header>
+        
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +63,7 @@
 
 <main role="main">
 
-  @yield('conteudo2')
+  @yield('conteudo3')
 
 
   <!-- FOOTER -->
@@ -73,6 +74,7 @@
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="{{URL::to('/')}}/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+   
   </body>
 </html>
 

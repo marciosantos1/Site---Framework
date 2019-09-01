@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Util;
 
 class ContatoController extends Controller
 {
@@ -21,4 +22,5 @@ class ContatoController extends Controller
         
     }
     
+   
 }
