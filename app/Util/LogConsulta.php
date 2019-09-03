@@ -29,6 +29,7 @@ class LogConsulta{
             $dadosAtuais = $this->capturar();
             $dadosAtuais .= "\n\n"."DATA E HORA = ".$data;
              $dadosAtuais .= " __ "."IP = ".$this->obterIp();
+             $dadosAtuais .= " __ "."titulo = ".$this->obterTitulo();
             $this->gravarArquivos($dadosAtuais);
         } else {
             $this->gravarArquivos($data);
@@ -53,6 +54,20 @@ class LogConsulta{
        return $clienteIp;
   
     }
+    public function obterTitulo(){
+        
     
+$ssite=('http://localhost:8000/'); 
+
+$q=@file_get_contents($ssite); 
+preg_match_all('#<title>([^<\/]{1,})<\/title>#i',$q,$match);
+
+$otitle=($match[1][0]); 
+
+return $otitle;
+
+
+  
+    }
     
 }
